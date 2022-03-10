@@ -12,19 +12,25 @@
 
 def isAnagram(s, t):
 
-    charArray = [0]*26
+    if len(s) != len(t):            # O(1)
+        return False
 
-    for i in s:
-        val = ord('a') - ord(i)
+    charArray = [0]*26              # O(1)
+
+    for i in s:                     # O(s)
+        val = ord('a') - ord(i)     
         charArray[val] += 1
 
-    for i in t:
+    for i in t:                     # O(s)
         val = ord('a') - ord(i)
         if charArray[val] < 1:
             return False
         charArray[val] -= 1
     
 
-    if sum(charArray) > 0:
+    if sum(charArray) > 0:          # O(s)
         return False
     return True
+
+
+# 

@@ -23,3 +23,9 @@ def hasDuplicate(nums):
 
 # O(n) - Time Complexity - Since it takes O(n) to iterate through nums
 # O(n) - Space Complexity - Since worst case is we add entire nums O(n) to the set
+
+
+
+# Notes:
+#
+# Iterate once through array. Store visited values into a set. If current value exists in set then there are Duplicates
