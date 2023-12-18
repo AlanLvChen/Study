@@ -1,0 +1,109 @@
+Creating the Project:
+    To create a project run the command npx create-remix@latest
+
+What's the difference between npx, npm, yarn?
+
+Yarn
+https://yarnpkg.com/
+
+Yarn is a package manager that installs dependencies for your project. It’s an alternative to using npm.
+    yarn [command]
+If the command provided is not known, it looks in the scripts part of the package.json file. So for example, if your scripts section has a dev then the command is yarn dev
+If the command does not exist in the scripts section of the package.json file, then yarn will look for the binary in node_modules/bin
+
+Npm and Npx
+https://docs.npmjs.com/about-npm
+https://docs.npmjs.com/cli/v7/commands/npx
+
+Npm is the package manager that comes when installing Node.
+    Npm [command]
+If the command provided is not known to Npm, it needs `run` and it also looks in the scripts part of the package.json file. So for example, if your scripts section has a dev then the command is npm run dev
+If the command does not exist in scripts section of the package.json file then this is where Npx comes into play. Npx can run a command from a local or remote package. 
+    Npx will search node_modules/bin folder for the package, and if its not there, it will download it and run it. For example: npx graphql-codegen
+
+    npx : An npm package runner — helps to execute packages without installing explicitly.
+
+
+TLDR: 
+
+System-wide installation:
+
+If you want to install a package globally on your system (available for any project), you would typically use npm with the -g flag, like: npm install -g package-name.
+Alternatively, you can use npx to run a package without installing it globally.
+Project-specific installation:
+
+For installing packages that are specific to a particular project, you use either npm or yarn within the project directory. The dependencies are then saved in the project's node_modules directory.
+To install dependencies with npm: npm install package-name.
+To install dependencies with yarn: yarn add package-name.
+Remember that both npm and yarn are package managers, and they do essentially the same thing—manage dependencies
+
+
+So Yarn or Npm?
+
+Yarn:
+Performance:
+
+Yarn was initially developed to address some performance issues with npm. It tends to be faster in terms of package installation and dependency resolution.
+Deterministic Dependency Resolution:
+
+Yarn uses a lockfile (yarn.lock) to ensure deterministic dependency resolution. This means that installations are more likely to be consistent across different environments.
+Offline Mode:
+
+Yarn has a built-in offline mode that allows you to install packages without an internet connection, using locally cached dependencies.
+
+Npm: 
+Widespread Adoption:
+
+npm is the default package manager for Node.js, and it is widely adopted. Many open-source projects and tutorials use npm, so there's a large community and plenty of resources available.
+Integrated with Node.js:
+
+npm comes bundled with Node.js, so there's no need for an additional installation. This can be an advantage if you prefer using tools that are part of the standard Node.js ecosystem.
+Active Development:
+
+Both npm and Yarn are actively developed, but npm has been continuously improved, addressing many of the initial performance concerns.
+
+
+https://romanglushach.medium.com/comparing-npm-yarn-and-pnpm-package-managers-which-one-is-right-for-your-distributed-project-to-4d7de2f0db8e
+
+
+THIRD OPTION: 
+    pnpm    aka Performant Node Package Manager
+
+    Advantages
+        It is faster and lighter than both NPM and YARN when installing or updating packages
+        It uses hard links or symlinks to link packages from a global store instead of copying them to the node_modules folder
+        It supports strict dependency isolation that prevents packages from accessing modules that are not declared in their package.json file
+        It has a built-in security audit tool that checks for vulnerabilities in your dependencies
+    Disadvantages
+        It is not as widely used or supported as NPM or YARN by the JavaScript community
+        It may not be compatible with some NPM or YARN packages or features
+        It may have some bugs or issues that are not yet fixed or resolved
+
+
+BUT Before all of this. We need Node.js installed
+
+    Node.js
+        open-source, cross-platform JavaScript runtime environemtn that executes JavaScript code outside a web browser.
+        Allows developers to use JavaScript for server-side scripting.
+
+        Asynchronous (non-blocking) and Event-driven
+            Node.js can handle many concurrent connections without the need for multithreading (single-threaded event loop)
+
+        Node.js comes with npm
+
+        Single Programming Language
+            Node.js allows developers to use a single programming language (JavaScript) for both server-side and client-side Development
+
+
+So what's the difference between Node.js and Web browser Javascript?
+
+    Node.js is primarily used for server-side scripting. It allows you to run JavaScript code on the server, handle server-side logic, and respond to requests from clients.
+    In the context of React, Node.js is often used for server-side rendering (SSR), which involves rendering React components on the server and sending the pre-rendered HTML to the client.
+
+    Web browser is where the React code runs on the client side. React is a JavaScript library for building user interfaces, and it executes in the browser. 
+    When a user visits a website built with React, their browser downloads the React code along with any other JavaScript, HTML, and CSS files needed for the application.
+
+TLDR:
+    Node.js is involved in server-side tasks and may be used for specific purposes in a React application, 
+    the web browser is where React code runs on the client side, handling the presentation and user interactions. 
+    The combination of Node.js on the server and React in the browser allows for building full-stack JavaScript applications.
